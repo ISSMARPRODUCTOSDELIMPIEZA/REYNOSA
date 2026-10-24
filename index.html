@@ -1623,7 +1623,7 @@ const CONFIG={
   linkPago:'https://link.mercadopago.com.mx/tiendawebamor',
   linkConekta:'',
   monedaDefecto:'MXN',
-  firebase:{apiKey:'AIzaSyDklBhYqQLjzZAwWF-fZuFAQCEzRHeRhgc',authDomain:'issmar-4303e.firebaseapp.com',projectId:'issmar-4303e',storageBucket:'issmar-4303e.firebasestorage.app',messagingSenderId:'1009617327169',appId:'1:1009617327169:web:0ed7ba4560d6a300c722c0'},
+  firebase:{apiKey:'AIzaSyDdHNOru7Qt6l0dpF783-t5Kv6ICMt1h_c',authDomain:'issmar-604fd.firebaseapp.com',projectId:'issmar-604fd',storageBucket:'issmar-604fd.firebasestorage.app',messagingSenderId:'550488708872',appId:'1:550488708872:web:51af8934d59680b080febd',measurementId:'G-E8PJZ2E646'},
   facebookLogin:false
 };
 
@@ -3102,6 +3102,17 @@ setInterval(()=>{if(!B.classList.contains('hw-off')){const w=mk('','🧽',`right
 setInterval(()=>{if(!B.classList.contains('hw-off'))for(let i=0;i<8;i++)bub.push({x:R()*W,y:H+20,r:5+R()*20,s:.6+R(),w:R()*6,h:R()*360}),bub.length>80&&bub.splice(0,8)},9000); //49 oleadas de burbujas
 setInterval(()=>{if(!B.classList.contains('hw-off')){const s=mk('','🧙‍♀️',`left:-60px;top:${10+R()*30}vh;font-size:44px;transition:transform 8s linear;z-index:37;filter:drop-shadow(0 0 12px #b36bff)`);requestAnimationFrame(()=>s.style.transform=`translateX(${innerWidth+120}px) translateY(-40px)`);setTimeout(()=>s.remove(),8500)}},30000); //50 bruja en escoba
 })();
+</script>
+
+<!-- Firebase Analytics (usa la misma config de CONFIG.firebase) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+  import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js";
+  try {
+    const app = initializeApp(CONFIG.firebase);
+    // Analytics no funciona en file:// ni con cookies bloqueadas; isSupported() evita errores
+    if (await isSupported()) window.fbAnalytics = getAnalytics(app);
+  } catch (e) { console.warn('Firebase Analytics no se inició:', e); }
 </script>
 
 </body>
